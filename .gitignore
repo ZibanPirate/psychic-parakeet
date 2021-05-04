@@ -1,0 +1,17 @@
+# system
+**.DS_Store
+
+# tools
+.vscode
+.idea/
+
+# setup
+.env
+.husky
+
+# logs
+yarn-error.log
+**.tsbuildinfo
+
+# node
+**node_modules
