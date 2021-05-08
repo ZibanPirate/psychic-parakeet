@@ -22,7 +22,17 @@ export class DocsMiddleware implements ExpressMiddlewareInterface {
     // Parse routing-controllers classes into OpenAPI spec:
     const storage = getMetadataArgsStorage();
     const spec = routingControllersToSpec(storage, routingControllersOptions, {
-      components: { schemas },
+      components: {
+        schemas,
+        securitySchemes: {
+          bearerAuth: {
+            name: "bearerAuth",
+            type: "http",
+            scheme: "bearer",
+          },
+        },
+      },
+      security: [{ bearerAuth: [] }],
       info: {
         description: "swagger documentation for parakeet API",
         title: "parakeet API v1",
