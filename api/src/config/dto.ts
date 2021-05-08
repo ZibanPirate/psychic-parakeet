@@ -2,7 +2,7 @@ import { Length, Matches } from "class-validator";
 
 const environment: Environment[] = ["development", "production"];
 
-export class ENVDto {
+export class ENV {
   PORT = 7070; // default port is 7070
 
   @Matches("(" + environment.join(")|(") + ")")

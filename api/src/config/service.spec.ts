@@ -1,5 +1,5 @@
 import { ConfigService } from "./service";
-import { ENVDto } from "./dto";
+import { ENV } from "./dto";
 import dotenv from "dotenv";
 
 jest.mock("dotenv");
@@ -38,7 +38,7 @@ describe("ConfigService", () => {
 
     const configService = new ConfigService();
     expect(configService).toBeInstanceOf(ConfigService);
-    expect(configService.env()).toMatchObject<ENVDto>({
+    expect(configService.env()).toMatchObject<ENV>({
       NODE_ENV: "development",
       PORT: 7070,
       OMDBAPI_API_KEY: "12345678",

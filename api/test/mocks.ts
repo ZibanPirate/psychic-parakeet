@@ -1,4 +1,4 @@
-import { ENVDto } from "../src/config/dto";
+import { ENV } from "../src/config/dto";
 import { OmdbRecord } from "../src/omdbapi/service";
 
 export const generateOmdbRecordMock = (i: number): OmdbRecord => ({
@@ -17,7 +17,7 @@ export const generateOmdbRecordBatchMock = (i: number, count = 1) => {
   return omdbRecordBatch;
 };
 
-export const configEnvMock: ENVDto = {
+export const configEnvMock: ENV = {
   OMDBAPI_API_KEY: "12345678",
   NODE_ENV: "development",
   PORT: 7070,
