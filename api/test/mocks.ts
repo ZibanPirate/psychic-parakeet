@@ -11,7 +11,7 @@ export const generateOmdbRecordMock = (i: number): OmdbRecord => ({
 
 export const generateOmdbRecordBatchMock = (i: number, count = 1) => {
   const omdbRecordBatch: OmdbRecord[] = [];
-  for (let index = i; index < count; index++) {
+  for (let index = i; index < i + count; index++) {
     omdbRecordBatch.push(generateOmdbRecordMock(index));
   }
   return omdbRecordBatch;

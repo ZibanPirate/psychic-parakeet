@@ -18,7 +18,7 @@ export class OmdbApiService {
       data: {
         Response,
         totalResults,
-        search: omdbRecords,
+        Search: omdbRecords,
         Error: errorMessage,
       },
     } = await Axios.get<OmdbApiSearchResponse>(url);
@@ -41,7 +41,7 @@ export interface OmdbApiSearchParams {
 }
 
 export interface OmdbApiSearchResponse {
-  search: OmdbRecord[];
+  Search: OmdbRecord[];
   totalResults: string;
   Response: "True" | "False";
   Error?: string;

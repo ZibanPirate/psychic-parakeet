@@ -38,7 +38,7 @@ describe("OmdbApiService", () => {
     mockedAxios.get.mockResolvedValue({
       data: {
         Response: "True",
-        search: omdbRecordBatchMock,
+        Search: omdbRecordBatchMock,
         totalResults: "100",
       } as OmdbApiSearchResponse,
     });
