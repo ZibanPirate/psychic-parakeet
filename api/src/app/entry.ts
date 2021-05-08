@@ -1,14 +1,32 @@
 import "reflect-metadata";
 
+import { createExpressServer, useContainer } from "routing-controllers";
+import { Application } from "express";
 import { ConfigService } from "../config/service";
 import Container from "typedi";
-import express from "express";
+import { DocsMiddleware } from "./middlewares/docs";
+import { ErrorMiddleware } from "./middlewares/error";
+import { LoggerMiddleware } from "./middlewares/logger";
+import { SecurityMiddleware } from "./middlewares/security";
 import { runCronJobs } from "./cron-jobs/setup";
-const app = express();
 
-app.get("/", function (req, res) {
-  res.send("hello world");
-});
+// Use typedi container
+useContainer(Container);
+
+// Create the app:
+export const routingControllersOptions = {
+  controllers: [],
+  middlewares: [
+    // middlewares:
+    SecurityMiddleware,
+    ErrorMiddleware,
+    LoggerMiddleware,
+    DocsMiddleware,
+  ],
+  defaultErrorHandler: false,
+  cors: Container.get(SecurityMiddleware).cors(),
+};
+const app: Application = createExpressServer(routingControllersOptions);
 
 const { NODE_ENV, PORT } = Container.get(ConfigService).env();
 
