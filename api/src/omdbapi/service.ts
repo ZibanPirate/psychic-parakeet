@@ -31,6 +31,21 @@ export class OmdbApiService {
       omdbRecords,
     };
   };
+
+  public findOne = async (imdbID: string): Promise<OmdbRecord> => {
+    const url = `http://www.omdbapi.com/?apiKey=${
+      this.configService.env().OMDBAPI_API_KEY
+    }&i=${imdbID}`;
+
+    const {
+      data: { Response, Error: errorMessage, ...omdbRecord },
+    } = await Axios.get<OmdbApiFindOneResponse>(url);
+    if (Response !== "True") {
+      throw new Error(errorMessage || "OmdbApi.com API failure");
+    }
+
+    return omdbRecord;
+  };
 }
 
 export interface OmdbApiSearchParams {
@@ -43,6 +58,11 @@ export interface OmdbApiSearchParams {
 export interface OmdbApiSearchResponse {
   Search: OmdbRecord[];
   totalResults: string;
+  Response: "True" | "False";
+  Error?: string;
+}
+
+export interface OmdbApiFindOneResponse extends OmdbRecord {
   Response: "True" | "False";
   Error?: string;
 }
