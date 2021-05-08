@@ -13,3 +13,5 @@ export class GeneralResponse {
   @IsOptional()
   debug?: Record<string, unknown>;
 }
+
+export type Role = "CRON_JOB";

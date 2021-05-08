@@ -1,12 +1,18 @@
 import "reflect-metadata";
 
-import { createExpressServer, useContainer } from "routing-controllers";
+import {
+  RoutingControllersOptions,
+  createExpressServer,
+  useContainer,
+} from "routing-controllers";
 import { Application } from "express";
+import { AuthorizationMiddleware } from "./middlewares/authorization";
 import { ConfigService } from "../config/service";
 import Container from "typedi";
 import { DocsMiddleware } from "./middlewares/docs";
 import { ErrorMiddleware } from "./middlewares/error";
 import { LoggerMiddleware } from "./middlewares/logger";
+import { OmdbApiController } from "../omdbapi/controller";
 import { SecurityMiddleware } from "./middlewares/security";
 import { runCronJobs } from "./cron-jobs/setup";
 
@@ -14,8 +20,8 @@ import { runCronJobs } from "./cron-jobs/setup";
 useContainer(Container);
 
 // Create the app:
-export const routingControllersOptions = {
-  controllers: [],
+export const routingControllersOptions: RoutingControllersOptions = {
+  controllers: [OmdbApiController],
   middlewares: [
     // middlewares:
     SecurityMiddleware,
@@ -25,6 +31,8 @@ export const routingControllersOptions = {
   ],
   defaultErrorHandler: false,
   cors: Container.get(SecurityMiddleware).cors(),
+  authorizationChecker: Container.get(AuthorizationMiddleware)
+    .authorizationChecker,
 };
 const app: Application = createExpressServer(routingControllersOptions);
 

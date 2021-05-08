@@ -22,17 +22,18 @@ describe("ConfigService", () => {
     );
   });
 
-  it("should throw error when .env has no OMDBAPI_API_KEY key or its value is null", async () => {
+  it("should throw error when .env doesn't have at least one Required key or its value is null", async () => {
     mockedDotenv.config.mockReturnValue({ parsed: { NODE_ENV: "testing" } });
 
-    expect(() => new ConfigService()).toThrowError(
-      `⚠️  Errors in .env file in the following keys:\nNODE_ENV : {\"matches\":\"NODE_ENV must match (development)|(production) regular expression\"}\nOMDBAPI_API_KEY : {\"isLength\":\"OMDBAPI_API_KEY must be longer than or equal to 8 characters\"}`,
-    );
+    expect(() => new ConfigService()).toThrow();
   });
 
   it("should return default envs when their keys don't exist on .env", async () => {
     mockedDotenv.config.mockReturnValue({
-      parsed: { OMDBAPI_API_KEY: "12345678" },
+      parsed: {
+        OMDBAPI_API_KEY: "12345678",
+        MANUAL_CRON_JOB_EXECUTION_TOKEN: "test-token",
+      },
     });
     process.env = { NODE_ENV: "development" };
 
@@ -42,6 +43,7 @@ describe("ConfigService", () => {
       NODE_ENV: "development",
       PORT: 7070,
       OMDBAPI_API_KEY: "12345678",
+      MANUAL_CRON_JOB_EXECUTION_TOKEN: "test-token",
     });
   });
 });

@@ -4,7 +4,7 @@ import { Service } from "typedi";
 
 @Service()
 export class PullOmdbDataCronJob implements CronJob {
-  public time = "* * * * *";
+  public time = "00 00 00 * * *";
   public name = "Pulling data from omdbapi.com";
 
   public run = async () => {
