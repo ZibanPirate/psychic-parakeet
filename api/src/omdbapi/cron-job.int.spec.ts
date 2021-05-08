@@ -3,7 +3,6 @@ import { configEnvMock, generateOmdbRecordBatchMock } from "../../test/mocks";
 import Axios from "axios";
 import { ConfigService } from "../config/service";
 import Cron from "cron";
-import MockDate from "mockdate";
 import { PullOmdbDataCronJob } from "./cron-job";
 import { mock } from "jest-mock-extended";
 
@@ -18,10 +17,6 @@ describe("PullOmdbDataCronJob", () => {
   const omdbApiService = new OmdbApiService(mockedConfigServiceInstance);
   const omdbRecordBatchMock = generateOmdbRecordBatchMock(0, 10);
 
-  afterAll(() => {
-    MockDate.reset();
-  });
-
   it("should crate a cron job", async () => {
     const pullOmdbDataCronJob = new PullOmdbDataCronJob(omdbApiService);
 
@@ -30,8 +25,6 @@ describe("PullOmdbDataCronJob", () => {
   });
 
   it("should pull data from omdbapi.com and save it to database", async () => {
-    const currentYear = 2020;
-    MockDate.set(`${currentYear}`);
     mockedAxios.get.mockResolvedValue({
       data: {
         Response: "True",
@@ -42,8 +35,6 @@ describe("PullOmdbDataCronJob", () => {
     const pullOmdbDataCronJob = new PullOmdbDataCronJob(omdbApiService);
     await pullOmdbDataCronJob.run();
 
-    expect(mockedAxios.get).toBeCalledTimes(
-      ((currentYear - PullOmdbDataCronJob.fromYear + 1) * 20) / 10,
-    );
+    expect(mockedAxios.get).toBeCalledTimes(20 / 10 + 20);
   });
 });

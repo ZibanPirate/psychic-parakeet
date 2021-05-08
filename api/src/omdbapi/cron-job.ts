@@ -16,7 +16,7 @@ export class PullOmdbDataCronJob implements CronJob {
     let totalCount = 0;
     const recordsPerPage = 10;
     const fromYear = PullOmdbDataCronJob.fromYear;
-    const toYear = new Date().getFullYear();
+    const toYear = 2001;
     console.time("PullOmdbDataCronJob");
     for (let year = fromYear; year <= toYear; year++) {
       let count = 0;
@@ -37,6 +37,13 @@ export class PullOmdbDataCronJob implements CronJob {
               (Math.floor(count / recordsPerPage) * recordsPerPage)) *
             100,
         )}%`;
+
+        const movies = await Promise.all(
+          response.omdbRecords.map((omdbRecord) =>
+            this.omdbApiService.findOne(omdbRecord.imdbID),
+          ),
+        );
+
         console.log({ progress, query: "space", page, type: "movie", year });
       } while (page * recordsPerPage < count);
       totalCount += count;
