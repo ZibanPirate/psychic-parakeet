@@ -18,7 +18,7 @@ export class ConfigService {
     const _config = config();
     const output = plainToClass(ENVDto, {
       ...process.env,
-      ...(_config.parsed || {}),
+      ..._config.parsed,
     });
 
     const errors = validateSync(output);
