@@ -12,5 +12,5 @@ module.exports = {
   transform: {
     "^.+\\.(ts)?$": "ts-jest",
   },
-  coveragePathIgnorePatterns: ["node_modules", "dist", "src/app/entry.ts"],
+  coveragePathIgnorePatterns: ["node_modules", "dist", "src/app"],
 };
