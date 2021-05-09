@@ -6,9 +6,7 @@ import { mock } from "jest-mock-extended";
 jest.mock("redis-modules-sdk", () => ({
   Redisearch: class Redisearch {
     public connect = jest.fn().mockResolvedValue({});
-    public create = jest
-      .fn()
-      .mockRejectedValue("Error: Redisearch: ReplyError: Index already exists");
+    public create = jest.fn().mockRejectedValue("test-error");
   },
 }));
 
@@ -20,7 +18,7 @@ describe("SearchService", () => {
     it("connect and skip index creation if it does exist", async () => {
       const searchService = new SearchService(mockedConfigServiceInstance);
 
-      await expect(searchService.setupDB()).resolves.toBeUndefined();
+      await expect(searchService.setupDB()).rejects.toBe("test-error");
     });
   });
 });

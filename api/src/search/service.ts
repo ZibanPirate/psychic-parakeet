@@ -43,4 +43,31 @@ export class SearchService {
       }
     }
   };
+
+  public save = async (
+    type: string,
+    documents: SearchDBEntity | SearchDBEntity[],
+  ) => {
+    const docs = Array.isArray(documents) ? documents : [documents];
+    // hset [type]:[id] key1 "value1" ... keyN "valueN"
+    const calls = docs.map(({ id, ...doc }) => {
+      const args = [
+        `${type}:${id}`,
+        "title",
+        "spo",
+        ...Object.keys(doc).reduce<string[]>(
+          (pV, cV) => [...pV, `${cV}`, `"${doc[cV] || ""}"`],
+          [],
+        ),
+      ];
+
+      return this.client.sendCommand("hset", args);
+    });
+    await Promise.all(calls);
+  };
+}
+
+export class SearchDBEntity {
+  id!: string;
+  [key: string]: string | number | undefined;
 }

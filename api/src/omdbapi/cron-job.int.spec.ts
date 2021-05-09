@@ -5,20 +5,27 @@ import { ConfigService } from "../config/service";
 import Cron from "cron";
 import { MovieRepository } from "../movie/repository";
 import { PullOmdbDataCronJob } from "./cron-job";
+import { SearchService } from "../search/service";
 import { mock } from "jest-mock-extended";
-import { setupDB } from "../app/database/setup";
 
 jest.mock("axios");
 const mockedAxios = Axios as jest.Mocked<typeof Axios>;
 jest.mock("cron");
 const mockedCron = Cron as jest.Mocked<typeof Cron>;
 
-describe("PullOmdbDataCronJob", () => {
-  setupDB("postgresql://test:test@localhost:6161/test");
+jest.mock("redis-modules-sdk", () => ({
+  Redisearch: class Redisearch {
+    public connect = jest.fn().mockResolvedValue({});
+    public create = jest.fn().mockResolvedValue({});
+    public sendCommand = jest.fn().mockResolvedValue({});
+  },
+}));
 
+describe("PullOmdbDataCronJob", () => {
   const mockedConfigServiceInstance = mock<ConfigService>();
   mockedConfigServiceInstance.env.mockReturnValue(configEnvMock);
   const omdbApiService = new OmdbApiService(mockedConfigServiceInstance);
+  const searchService = new SearchService(mockedConfigServiceInstance);
   const omdbRecordBatchMock = generateOmdbRecordBatchMock(0, 10);
   const movieRepository = mock<MovieRepository>();
 
@@ -31,6 +38,7 @@ describe("PullOmdbDataCronJob", () => {
     const pullOmdbDataCronJob = new PullOmdbDataCronJob(
       omdbApiService,
       (movieRepository as unknown) as MovieRepository,
+      searchService,
     );
 
     expect(pullOmdbDataCronJob.start).not.toThrow();
@@ -48,6 +56,7 @@ describe("PullOmdbDataCronJob", () => {
     const pullOmdbDataCronJob = new PullOmdbDataCronJob(
       omdbApiService,
       (movieRepository as unknown) as MovieRepository,
+      searchService,
     );
     await pullOmdbDataCronJob.run();
 
