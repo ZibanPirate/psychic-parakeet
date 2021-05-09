@@ -40,6 +40,7 @@
     "express-rate-limit": "^5.2.6",
     "helmet": "^4.6.0",
     "pg": "^8.6.0",
+    "redis-modules-sdk": "^0.5.3",
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.9.0",
     "routing-controllers-openapi": "^3.0.0",

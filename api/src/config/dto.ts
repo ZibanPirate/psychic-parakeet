@@ -16,6 +16,9 @@ export class ENV {
 
   @Length(8)
   DB_URI!: string;
+
+  @Length(8)
+  SEARCH_DB_URI!: string;
 }
 
 // no stage environment cuz it's just a coding-challenge ;)

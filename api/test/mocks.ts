@@ -25,4 +25,5 @@ export const configEnvMock: ENV = {
   PORT: 7070,
   MANUAL_CRON_JOB_EXECUTION_TOKEN: "test-token",
   DB_URI: "test-uri",
+  SEARCH_DB_URI: "test-search-uri",
 };
