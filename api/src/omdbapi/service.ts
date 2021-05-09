@@ -35,7 +35,7 @@ export class OmdbApiService {
   public findOne = async (imdbID: string): Promise<OmdbRecord> => {
     const url = `http://www.omdbapi.com/?apiKey=${
       this.configService.env().OMDBAPI_API_KEY
-    }&i=${imdbID}`;
+    }&plot=full&i=${imdbID}`;
 
     const {
       data: { Response, Error: errorMessage, ...omdbRecord },
@@ -73,4 +73,6 @@ export interface OmdbRecord {
   Year: string;
   Type: string;
   Poster: string;
+  Director: string;
+  Plot: string;
 }

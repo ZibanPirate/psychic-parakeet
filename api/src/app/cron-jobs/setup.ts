@@ -4,7 +4,7 @@ import { toString } from "cronstrue";
 
 const jobs = [PullOmdbDataCronJob];
 
-export const runCronJobs = () => {
+export const runCronJobs = async () => {
   console.log("Running cron-jobs ...");
   jobs.forEach(async (JobClass) => {
     const { time, name, start } = Container.get(JobClass);

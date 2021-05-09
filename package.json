@@ -14,7 +14,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "yarn && concurrently \"cd api && yarn build:watch\" \"cd api && yarn dev\"",
+    "dev": "yarn && concurrently \"cd database && docker-compose up -d\" \"cd api && yarn build:watch\" \"cd api && yarn dev\"",
     "lint:check": "concurrently \"cd api && yarn lint:check\"",
     "lint:fix": "concurrently \"cd api && yarn lint:fix\"",
     "test": "concurrently \"cd api && yarn test\" \"cd common && yarn test\" \"cd data && yarn test\" \"cd web && yarn test\"",

@@ -13,6 +13,9 @@ export class ENV {
 
   @Length(8)
   MANUAL_CRON_JOB_EXECUTION_TOKEN!: string;
+
+  @Length(8)
+  DB_URI!: string;
 }
 
 // no stage environment cuz it's just a coding-challenge ;)

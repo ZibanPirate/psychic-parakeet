@@ -6,7 +6,7 @@ import { Service } from "typedi";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { defaultMetadataStorage } = require("class-transformer/cjs/storage");
 import { getMetadataArgsStorage } from "routing-controllers";
-import { routingControllersOptions } from "../entry";
+import { routingControllersOptions } from ".";
 import { routingControllersToSpec } from "routing-controllers-openapi";
 import { validationMetadatasToSchemas } from "class-validator-jsonschema";
 

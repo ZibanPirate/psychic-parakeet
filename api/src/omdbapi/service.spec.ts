@@ -80,7 +80,7 @@ describe("OmdbApiService", () => {
         "OmdbApi.com API failure",
       );
       expect(mockedAxios.get).toBeCalledWith(
-        `http://www.omdbapi.com/?apiKey=${configEnvMock.OMDBAPI_API_KEY}&i=test-imdbId`,
+        `http://www.omdbapi.com/?apiKey=${configEnvMock.OMDBAPI_API_KEY}&plot=full&i=test-imdbId`,
       );
     });
 
@@ -98,7 +98,7 @@ describe("OmdbApiService", () => {
       expect(response).toMatchObject(omdbRecordMock);
 
       expect(mockedAxios.get).toBeCalledWith(
-        `http://www.omdbapi.com/?apiKey=${configEnvMock.OMDBAPI_API_KEY}&i=test-imdbId`,
+        `http://www.omdbapi.com/?apiKey=${configEnvMock.OMDBAPI_API_KEY}&plot=full&i=test-imdbId`,
       );
     });
   });

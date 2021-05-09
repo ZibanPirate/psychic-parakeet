@@ -1,0 +1,11 @@
+version: '3'
+services:
+
+  local-db:
+    image: "postgres:9.6.1"
+    ports:
+      - "6060:5432"
+    environment:
+      POSTGRES_USER: "test"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_DB: "test"

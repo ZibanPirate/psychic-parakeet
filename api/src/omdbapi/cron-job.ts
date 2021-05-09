@@ -1,11 +1,17 @@
 import Cron from "cron";
 import { CronJob } from "../app/cron-jobs/types";
+import { InjectRepository } from "typeorm-typedi-extensions";
+import { MovieEntity } from "../app/database/entity/movie";
+import { MovieRepository } from "../movie/repository";
 import { OmdbApiService } from "./service";
 import { Service } from "typedi";
 
 @Service()
 export class PullOmdbDataCronJob implements CronJob {
-  constructor(private omdbApiService: OmdbApiService) {}
+  constructor(
+    private omdbApiService: OmdbApiService,
+    @InjectRepository(MovieEntity) private movieRepository: MovieRepository,
+  ) {}
 
   public time = "00 00 00 * * *";
   public name = "Pulling data from omdbapi.com";
@@ -38,11 +44,22 @@ export class PullOmdbDataCronJob implements CronJob {
             100,
         )}%`;
 
-        const movies = await Promise.all(
-          response.omdbRecords.map((omdbRecord) =>
-            this.omdbApiService.findOne(omdbRecord.imdbID),
-          ),
-        );
+        const movies: MovieEntity[] = (
+          await Promise.all(
+            response.omdbRecords.map((omdbRecord) =>
+              this.omdbApiService.findOne(omdbRecord.imdbID),
+            ),
+          )
+        ).map(({ Title, Year, Poster, imdbID, Director, Plot }) => ({
+          id: imdbID,
+          title: Title,
+          year: Year,
+          poster: Poster,
+          director: Director,
+          plot: Plot,
+        }));
+
+        this.movieRepository.save(movies);
 
         console.log({ progress, query: "space", page, type: "movie", year });
       } while (page * recordsPerPage < count);

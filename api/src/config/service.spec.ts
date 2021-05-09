@@ -33,6 +33,7 @@ describe("ConfigService", () => {
       parsed: {
         OMDBAPI_API_KEY: "12345678",
         MANUAL_CRON_JOB_EXECUTION_TOKEN: "test-token",
+        DB_URI: "test-uri",
       },
     });
     process.env = { NODE_ENV: "development" };
@@ -44,6 +45,7 @@ describe("ConfigService", () => {
       PORT: 7070,
       OMDBAPI_API_KEY: "12345678",
       MANUAL_CRON_JOB_EXECUTION_TOKEN: "test-token",
+      DB_URI: "test-uri",
     });
   });
 });

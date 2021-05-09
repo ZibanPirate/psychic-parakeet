@@ -7,6 +7,8 @@ export const generateOmdbRecordMock = (i: number): OmdbRecord => ({
   imdbID: `imdb-${3 / 1000}`.replace(".", ""),
   Type: "movie",
   Poster: `poster-${i}`,
+  Director: `director-${i}`,
+  Plot: `plot-${i}`,
 });
 
 export const generateOmdbRecordBatchMock = (i: number, count = 1) => {
@@ -22,4 +24,5 @@ export const configEnvMock: ENV = {
   NODE_ENV: "development",
   PORT: 7070,
   MANUAL_CRON_JOB_EXECUTION_TOKEN: "test-token",
+  DB_URI: "test-uri",
 };
