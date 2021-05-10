@@ -1,4 +1,4 @@
-import { configEnvMock, generateMovieEntityBatchMock } from "../../test/mocks";
+import { envMock, generateMovieEntityBatchMock } from "../../test/mocks";
 import { MovieEntity } from "../app/database/entity/movie";
 import { MovieRepository } from "../movie/repository";
 import { SearchController } from "./controller";
@@ -17,7 +17,7 @@ jest.mock("redis-modules-sdk", () => ({
       .mockResolvedValue([2, "movie:1", [], "movie:2", []]);
   },
 }));
-jest.mock("dotenv", () => ({ config: () => ({ parsed: configEnvMock }) }));
+jest.mock("dotenv", () => ({ config: () => ({ parsed: envMock }) }));
 jest.mock("typeorm", () => ({
   PrimaryColumn: jest.fn(),
   Column: jest.fn(),

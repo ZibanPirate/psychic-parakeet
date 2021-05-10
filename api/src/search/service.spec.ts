@@ -1,6 +1,6 @@
 import { ConfigService } from "../config/service";
 import { SearchService } from "./service";
-import { configEnvMock } from "../../test/mocks";
+import { envMock } from "../../test/mocks";
 import { mock } from "jest-mock-extended";
 
 jest.mock("redis-modules-sdk", () => ({
@@ -12,7 +12,7 @@ jest.mock("redis-modules-sdk", () => ({
 
 describe("SearchService", () => {
   const mockedConfigServiceInstance = mock<ConfigService>();
-  mockedConfigServiceInstance.env.mockReturnValue(configEnvMock);
+  mockedConfigServiceInstance.env.mockReturnValue(envMock);
 
   describe("setupDB", () => {
     it("connect and skip index creation if it does exist", async () => {

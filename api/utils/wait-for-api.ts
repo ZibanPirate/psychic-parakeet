@@ -15,4 +15,4 @@ const deps = [
   },
 ];
 
-waitFor({ deps, interval: 200 });
+waitFor({ deps });

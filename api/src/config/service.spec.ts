@@ -1,6 +1,6 @@
+import { dotEnvMock, envMock } from "../../test/mocks";
 import { ConfigService } from "./service";
 import { ENV } from "./dto";
-import { configEnvMock } from "../../test/mocks";
 import dotenv from "dotenv";
 
 jest.mock("dotenv");
@@ -16,10 +16,12 @@ describe("ConfigService", () => {
   });
 
   it("should throw error when .env has invalid key value pair", async () => {
-    mockedDotenv.config.mockReturnValue({ parsed: { NODE_ENV: "testing" } });
+    mockedDotenv.config.mockReturnValue({
+      parsed: { ...dotEnvMock, NODE_ENV: "dwdw" },
+    });
 
     expect(() => new ConfigService()).toThrowError(
-      `⚠️  Errors in .env file in the following keys:\nNODE_ENV : {\"matches\":\"NODE_ENV must match (development)|(production) regular expression\"}`,
+      `⚠️  Errors in .env file in the following keys:\nNODE_ENV : {\"matches\":\"NODE_ENV must match (development)|(production)|(test) regular expression\"}`,
     );
   });
 
@@ -42,6 +44,6 @@ describe("ConfigService", () => {
 
     const configService = new ConfigService();
     expect(configService).toBeInstanceOf(ConfigService);
-    expect(configService.env()).toMatchObject<ENV>(configEnvMock);
+    expect(configService.env()).toMatchObject<ENV>(envMock);
   });
 });

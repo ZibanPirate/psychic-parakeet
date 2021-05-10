@@ -3,10 +3,10 @@ interface Config {
     name: string;
     condition: () => Promise<boolean>;
   }>;
-  interval: number;
+  interval?: number;
 }
 
-export const waitFor = async ({ deps, interval }: Config) => {
+export const waitFor = async ({ deps, interval = 1000 }: Config) => {
   do {
     try {
       const areReady = await Promise.all(deps.map((dep) => dep.condition()));

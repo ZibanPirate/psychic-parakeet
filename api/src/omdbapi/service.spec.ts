@@ -5,7 +5,7 @@ import {
   OmdbApiService,
 } from "./service";
 import {
-  configEnvMock,
+  envMock,
   generateOmdbRecordBatchMock,
   generateOmdbRecordMock,
 } from "../../test/mocks";
@@ -18,7 +18,7 @@ const mockedAxios = Axios as jest.Mocked<typeof Axios>;
 
 describe("OmdbApiService", () => {
   const mockedConfigServiceInstance = mock<ConfigService>();
-  mockedConfigServiceInstance.env.mockReturnValue(configEnvMock);
+  mockedConfigServiceInstance.env.mockReturnValue(envMock);
 
   describe("search", () => {
     const omdbRecordBatchMock = generateOmdbRecordBatchMock(0, 10);
@@ -36,7 +36,7 @@ describe("OmdbApiService", () => {
         "OmdbApi.com API failure",
       );
       expect(mockedAxios.get).toBeCalledWith(
-        `http://www.omdbapi.com/?apiKey=${configEnvMock.OMDBAPI_API_KEY}&s=${omdbApiSearchParams.query}`,
+        `http://www.omdbapi.com/?apiKey=${envMock.OMDBAPI_API_KEY}&s=${omdbApiSearchParams.query}`,
       );
     });
 
@@ -62,7 +62,7 @@ describe("OmdbApiService", () => {
         omdbRecords: omdbRecordBatchMock,
       });
       expect(mockedAxios.get).toBeCalledWith(
-        `http://www.omdbapi.com/?apiKey=${configEnvMock.OMDBAPI_API_KEY}&s=${omdbApiSearchParams.query}&type=movie&y=233&page=1`,
+        `http://www.omdbapi.com/?apiKey=${envMock.OMDBAPI_API_KEY}&s=${omdbApiSearchParams.query}&type=movie&y=233&page=1`,
       );
     });
   });
@@ -80,7 +80,7 @@ describe("OmdbApiService", () => {
         "OmdbApi.com API failure",
       );
       expect(mockedAxios.get).toBeCalledWith(
-        `http://www.omdbapi.com/?apiKey=${configEnvMock.OMDBAPI_API_KEY}&plot=full&i=test-imdbId`,
+        `http://www.omdbapi.com/?apiKey=${envMock.OMDBAPI_API_KEY}&plot=full&i=test-imdbId`,
       );
     });
 
@@ -98,7 +98,7 @@ describe("OmdbApiService", () => {
       expect(response).toMatchObject(omdbRecordMock);
 
       expect(mockedAxios.get).toBeCalledWith(
-        `http://www.omdbapi.com/?apiKey=${configEnvMock.OMDBAPI_API_KEY}&plot=full&i=test-imdbId`,
+        `http://www.omdbapi.com/?apiKey=${envMock.OMDBAPI_API_KEY}&plot=full&i=test-imdbId`,
       );
     });
   });
