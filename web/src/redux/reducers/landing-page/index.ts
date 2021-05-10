@@ -6,7 +6,7 @@ export interface LandingPageState {
 
 export const landingPage = (
   state: LandingPageState = {
-    movies: []
+    movies: [],
   },
   action: Action<LandingPageState>,
 ) => {

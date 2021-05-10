@@ -1,4 +1,10 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import { LandingPage } from ".";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";

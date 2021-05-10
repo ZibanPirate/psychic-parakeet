@@ -7,7 +7,6 @@ import { SettingsState } from "src/redux/reducers/settings";
 import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 
-
 const useStyles = makeStyles(() =>
   createStyles({
     darkModeText: {

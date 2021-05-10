@@ -15,15 +15,21 @@ const useStyles = makeStyles(() =>
 
 export const LandingPage: FC = () => {
   const classes = useStyles();
-  const landingPageState = useSelector<StateInterface, LandingPageState>((state) => state.landingPage);
+  const landingPageState = useSelector<StateInterface, LandingPageState>(
+    (state) => state.landingPage,
+  );
 
-  return <>
-    <Navbar />
-    <div className={classes.searchContainer}>
-      <div>Search goes here</div>
-      <div>Found {landingPageState.movies && landingPageState.movies.length}</div>
-    </div>
-  </>;
+  return (
+    <>
+      <Navbar />
+      <div className={classes.searchContainer}>
+        <div>Search goes here</div>
+        <div>
+          Found {landingPageState.movies && landingPageState.movies.length}
+        </div>
+      </div>
+    </>
+  );
 };
 
 // for lazy-loading

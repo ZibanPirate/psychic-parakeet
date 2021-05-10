@@ -1,7 +1,7 @@
 import "./style.scss";
 
 import { ComponentType, FC, Suspense, lazy } from "react";
-import { Route, RouteProps, Switch, } from "react-router-dom";
+import { Route, RouteProps, Switch } from "react-router-dom";
 import { Loading } from "src/components/loading";
 import { Theme } from "src/components/theme";
 
