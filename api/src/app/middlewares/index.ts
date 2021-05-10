@@ -5,13 +5,14 @@ import { DocsMiddleware } from "./docs";
 import { ErrorMiddleware } from "./error";
 import { LoggerMiddleware } from "./logger";
 import { OmdbApiController } from "../../omdbapi/controller";
+import { SearchController } from "../../search/controller";
 import { SecurityMiddleware } from "./security";
 
 // Use typedi container
 useContainer(Container);
 
 export const routingControllersOptions: RoutingControllersOptions = {
-  controllers: [OmdbApiController],
+  controllers: [OmdbApiController, SearchController],
   middlewares: [
     // middlewares:
     SecurityMiddleware,

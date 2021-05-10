@@ -2042,7 +2042,7 @@ dotenv@^8.2.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.6.0.tgz#061af664d19f7f4d8fc6e4ff9b584ce237adcb8b"
   integrity sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
 
-dotenv@^9.0.1:
+dotenv@^9.0.0:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.1.tgz#a889a28a3a515812dde1e7f8183ef5cdf3186b97"
   integrity sha512-W8FNeNnnvJoYfgkFRKzp8kTgz0T2YY4TJ9xy1Ma0hSebPTK8iquRtpG12TUrSTX5zIN9D/wSLEEuI+Ad35tlyw==
@@ -5720,6 +5720,11 @@ string-length@^4.0.1:
   dependencies:
     char-regex "^1.0.2"
     strip-ansi "^6.0.0"
+
+string-sanitizer@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/string-sanitizer/-/string-sanitizer-1.1.1.tgz#52d583fa639aefa01bc9a9d68cd4d53644cd85c5"
+  integrity sha512-ZaqlidMholFiBaKDPPVf9cJjNo6iRhP6g/ei5qTgvzKEMa8TK/nu4hM90YZ2LvfjvAomF2LIexmOlX1MvYN+ug==
 
 string-width@^3.0.0:
   version "3.1.0"
