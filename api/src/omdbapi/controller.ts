@@ -17,11 +17,11 @@ export class OmdbApiController {
   })
   @ResponseSchema(GeneralResponse)
   public async pullDataManually(): Promise<GeneralResponse> {
-    this.pullOmdbDataCronJob.run();
+    await this.pullOmdbDataCronJob.run();
 
     return {
       code: 200,
-      msg: "Job-Run Triggered Successfully",
+      msg: "Job-Run Ran Successfully",
     };
   }
 }

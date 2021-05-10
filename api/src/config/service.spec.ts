@@ -17,11 +17,11 @@ describe("ConfigService", () => {
 
   it("should throw error when .env has invalid key value pair", async () => {
     mockedDotenv.config.mockReturnValue({
-      parsed: { ...dotEnvMock, NODE_ENV: "dwdw" },
+      parsed: { ...dotEnvMock, MANUAL_CRON_JOB_EXECUTION_TOKEN: "" },
     });
 
     expect(() => new ConfigService()).toThrowError(
-      `⚠️  Errors in .env file in the following keys:\nNODE_ENV : {\"matches\":\"NODE_ENV must match (development)|(production)|(test) regular expression\"}`,
+      `⚠️  Errors in .env file in the following keys:\nMANUAL_CRON_JOB_EXECUTION_TOKEN : {\"isLength\":\"MANUAL_CRON_JOB_EXECUTION_TOKEN must be longer than or equal to 8 characters\"}`,
     );
   });
 

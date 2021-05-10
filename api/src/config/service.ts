@@ -23,7 +23,7 @@ export class ConfigService {
       dotEnvs = {};
     }
 
-    const output = plainToClass(ENV, { ...process.env, ...dotEnvs });
+    const output = plainToClass(ENV, { ...dotEnvs, ...process.env });
 
     const errors = validateSync(output);
 
