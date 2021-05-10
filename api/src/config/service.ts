@@ -16,10 +16,7 @@ export class ConfigService {
 
   private generateConfig = () => {
     const _config = config();
-    const output = plainToClass(ENV, {
-      ...process.env,
-      ..._config.parsed,
-    });
+    const output = plainToClass(ENV, _config.parsed);
 
     const errors = validateSync(output);
 
@@ -32,6 +29,6 @@ export class ConfigService {
         )}`,
       );
 
-    _env = output;
+    _env = { ...output, ...process.env };
   };
 }

@@ -5,3 +5,8 @@ services:
     image: "redislabs/redisearch:latest"
     ports:
       - "5050:6379"
+
+  test-db:
+    image: "redislabs/redisearch:latest"
+    ports:
+      - "5151:6379"
