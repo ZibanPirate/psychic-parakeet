@@ -65,6 +65,25 @@ export class SearchService {
     });
     await Promise.all(calls);
   };
+
+  public search = async (index: string, query: string) => {
+    const response = await this.client.search(index, query, {
+      noContent: false,
+      limit: { first: 0, num: 100 },
+    });
+    let count = 0;
+    let records: SearchDBEntity[] = [];
+    if (Array.isArray(response) && response.length > 1) {
+      count = response[0] as number;
+      records = response
+        .filter((item, index) => index % 2 !== 0)
+        .map((id) => ({ id }));
+    }
+    return {
+      count,
+      records,
+    };
+  };
 }
 
 export class SearchDBEntity {
