@@ -1,6 +1,6 @@
 import { Length, Matches } from "class-validator";
 
-const environment: Environment[] = ["development", "production"];
+const environment: Environment[] = ["development", "production", "test"];
 
 export class ENV {
   PORT = 7070; // default port is 7070
@@ -21,5 +21,7 @@ export class ENV {
   SEARCH_DB_URI!: string;
 }
 
+export type DotEnv = Record<keyof ENV, string>;
+
 // no stage environment cuz it's just a coding-challenge ;)
-type Environment = "development" | "production";
+type Environment = "development" | "production" | "test";

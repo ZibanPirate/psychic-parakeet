@@ -1,5 +1,5 @@
 import { OmdbApiSearchResponse, OmdbApiService } from "./service";
-import { configEnvMock, generateOmdbRecordBatchMock } from "../../test/mocks";
+import { envMock, generateOmdbRecordBatchMock } from "../../test/mocks";
 import Axios from "axios";
 import { ConfigService } from "../config/service";
 import Cron from "cron";
@@ -13,7 +13,7 @@ jest.mock("axios");
 const mockedAxios = Axios as jest.Mocked<typeof Axios>;
 jest.mock("cron");
 const mockedCron = Cron as jest.Mocked<typeof Cron>;
-jest.mock("dotenv", () => ({ config: () => ({ parsed: configEnvMock }) }));
+jest.mock("dotenv", () => ({ config: () => ({ parsed: envMock }) }));
 
 jest.mock("redis-modules-sdk", () => ({
   Redisearch: class Redisearch {

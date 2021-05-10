@@ -21,7 +21,7 @@ describe("OmdbApiController", () => {
 
     expect(response).toMatchObject<GeneralResponse>({
       code: 200,
-      msg: "Job-Run Triggered Successfully",
+      msg: "Job-Run Ran Successfully",
     });
 
     expect(mockedPullOmdbDataCronJobInstance.run).toBeCalled();

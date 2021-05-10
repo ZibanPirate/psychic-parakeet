@@ -28,7 +28,7 @@ jobs:
           cd api
           yarn lint:check
           yarn test:cov
-          yarn build
+          yarn test:e2e
 
         env:
           CI: true

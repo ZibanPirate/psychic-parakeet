@@ -15,11 +15,15 @@ export class ConfigService {
   public env = () => _env;
 
   private generateConfig = () => {
-    const _config = config();
-    const output = plainToClass(ENV, {
-      ...process.env,
-      ..._config.parsed,
-    });
+    let dotEnvs;
+    try {
+      const { parsed } = config();
+      dotEnvs = parsed || {};
+    } catch {
+      dotEnvs = {};
+    }
+
+    const output = plainToClass(ENV, { ...dotEnvs, ...process.env });
 
     const errors = validateSync(output);
 

@@ -1,4 +1,4 @@
-import { ENV } from "../src/config/dto";
+import { DotEnv, ENV } from "../src/config/dto";
 import { MovieEntity } from "../src/app/database/entity/movie";
 import { OmdbRecord } from "../src/omdbapi/service";
 
@@ -20,7 +20,7 @@ export const generateOmdbRecordBatchMock = (i: number, count = 1) => {
   return omdbRecordBatch;
 };
 
-export const configEnvMock: ENV = {
+export const envMock: ENV = {
   OMDBAPI_API_KEY: "12345678",
   NODE_ENV: "development",
   PORT: 7070,
@@ -28,6 +28,13 @@ export const configEnvMock: ENV = {
   DB_URI: "test-uri",
   SEARCH_DB_URI: "test-search-uri",
 };
+
+export const dotEnvMock = (Object.keys(envMock) as Array<
+  keyof ENV
+>).reduce<DotEnv>(
+  (pV, cV) => ({ ...pV, [cV]: `${envMock[cV]}` }),
+  {} as DotEnv,
+);
 
 export const generateMovieEntityMock = (i: number): MovieEntity => ({
   id: `imdb-${3 / 1000}`.replace(".", ""),
