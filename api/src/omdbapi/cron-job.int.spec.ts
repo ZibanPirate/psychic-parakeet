@@ -7,11 +7,13 @@ import { MovieRepository } from "../movie/repository";
 import { PullOmdbDataCronJob } from "./cron-job";
 import { SearchService } from "../search/service";
 import { mock } from "jest-mock-extended";
+import typeDIContainer from "typedi";
 
 jest.mock("axios");
 const mockedAxios = Axios as jest.Mocked<typeof Axios>;
 jest.mock("cron");
 const mockedCron = Cron as jest.Mocked<typeof Cron>;
+jest.mock("dotenv", () => ({ config: () => ({ parsed: configEnvMock }) }));
 
 jest.mock("redis-modules-sdk", () => ({
   Redisearch: class Redisearch {
@@ -22,17 +24,12 @@ jest.mock("redis-modules-sdk", () => ({
 }));
 
 describe("PullOmdbDataCronJob", () => {
-  const mockedConfigServiceInstance = mock<ConfigService>();
-  mockedConfigServiceInstance.env.mockReturnValue(configEnvMock);
-  const omdbApiService = new OmdbApiService(mockedConfigServiceInstance);
-  const searchService = new SearchService(mockedConfigServiceInstance);
+  const configService = typeDIContainer.get(ConfigService);
+  const omdbApiService = new OmdbApiService(configService);
+  const searchService = new SearchService(configService);
+
   const omdbRecordBatchMock = generateOmdbRecordBatchMock(0, 10);
   const movieRepository = mock<MovieRepository>();
-
-  beforeAll(() => {
-    jest.clearAllMocks();
-    mockedAxios.get.mockClear();
-  });
 
   it("should create a cron job", async () => {
     const pullOmdbDataCronJob = new PullOmdbDataCronJob(
