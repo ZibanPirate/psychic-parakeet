@@ -11,7 +11,7 @@ export class OmdbApiController {
   constructor(private readonly pullOmdbDataCronJob: PullOmdbDataCronJob) {}
 
   @Authorized("CRON_JOB")
-  @Post("/pull-data-manually")
+  @Post("/PullDataManually")
   @OpenAPI({
     summary: "Run cron job manually",
   })

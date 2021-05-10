@@ -4,6 +4,7 @@ import { InjectRepository } from "typeorm-typedi-extensions";
 import { MovieEntity } from "../app/database/entity/movie";
 import { MovieRepository } from "../movie/repository";
 import { OmdbApiService } from "./service";
+import { SearchService } from "../search/service";
 import { Service } from "typedi";
 
 @Service()
@@ -11,6 +12,7 @@ export class PullOmdbDataCronJob implements CronJob {
   constructor(
     private omdbApiService: OmdbApiService,
     @InjectRepository(MovieEntity) private movieRepository: MovieRepository,
+    private searchService: SearchService,
   ) {}
 
   public time = "00 00 00 * * *";
@@ -59,7 +61,16 @@ export class PullOmdbDataCronJob implements CronJob {
           plot: Plot,
         }));
 
-        this.movieRepository.save(movies);
+        await this.movieRepository.save(movies);
+        await this.searchService.save(
+          "movie",
+          movies.map(({ id, title, director, plot }) => ({
+            id,
+            title,
+            director,
+            plot,
+          })),
+        );
 
         console.log({ progress, query: "space", page, type: "movie", year });
       } while (page * recordsPerPage < count);

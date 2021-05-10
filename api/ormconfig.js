@@ -3,6 +3,9 @@ module.exports = {
   type: "postgres",
   synchronize: false,
   logging: false,
+  entities: ["src/app/database/entity/**/*.{ts,js}"],
+  migrations: ["src/app/database/migration/**/*.{ts,js}"],
+  subscribers: ["src/app/database/subscriber/**/*.{ts,js}"],
   migrationsTableName: "typeorm_migration_table",
   cli: {
     entitiesDir: "src/app/database/entity",

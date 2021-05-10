@@ -1,5 +1,6 @@
 import { ConfigService } from "./service";
 import { ENV } from "./dto";
+import { configEnvMock } from "../../test/mocks";
 import dotenv from "dotenv";
 
 jest.mock("dotenv");
@@ -34,18 +35,13 @@ describe("ConfigService", () => {
         OMDBAPI_API_KEY: "12345678",
         MANUAL_CRON_JOB_EXECUTION_TOKEN: "test-token",
         DB_URI: "test-uri",
+        SEARCH_DB_URI: "test-search-uri",
       },
     });
     process.env = { NODE_ENV: "development" };
 
     const configService = new ConfigService();
     expect(configService).toBeInstanceOf(ConfigService);
-    expect(configService.env()).toMatchObject<ENV>({
-      NODE_ENV: "development",
-      PORT: 7070,
-      OMDBAPI_API_KEY: "12345678",
-      MANUAL_CRON_JOB_EXECUTION_TOKEN: "test-token",
-      DB_URI: "test-uri",
-    });
+    expect(configService.env()).toMatchObject<ENV>(configEnvMock);
   });
 });
