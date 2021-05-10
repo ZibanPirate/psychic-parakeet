@@ -1,7 +1,8 @@
 {
   "name": "@parakeet/root",
   "workspaces": [
-    "api"
+    "api",
+    "web"
   ],
   "repository": {
     "type": "git",

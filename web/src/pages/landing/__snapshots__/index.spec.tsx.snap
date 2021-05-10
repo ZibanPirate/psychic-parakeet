@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing Page Render Landing page 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiSwitch-switchBase MuiSwitch-colorSecondary PrivateSwitchBase-checked-4 Mui-checked"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              checked=""
+              class="PrivateSwitchBase-input-6 MuiSwitch-input"
+              data-testid="dark-mode-switch"
+              name="darkMode"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <div
+        class="makeStyles-darkModeText-2"
+      >
+        🌙
+      </div>
+    </div>
+  </header>
+  <div
+    class="makeStyles-searchContainer-1"
+  >
+    <div>
+      Search goes here
+    </div>
+    <div>
+      Found 
+      0
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Landing Page Render Landing page after switching darkMode on 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-9 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              checked=""
+              class="PrivateSwitchBase-input-12 MuiSwitch-input"
+              data-testid="dark-mode-switch"
+              name="darkMode"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <div
+        class="makeStyles-darkModeText-8"
+      >
+        🌞
+      </div>
+    </div>
+  </header>
+  <div
+    class="makeStyles-searchContainer-7"
+  >
+    <div>
+      Search goes here
+    </div>
+    <div>
+      Found 
+      0
+    </div>
+  </div>
+</div>
+`;
