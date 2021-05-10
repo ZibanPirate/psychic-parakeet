@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Component Render Loading component 1`] = `
+<div>
+  <div
+    class="makeStyles-root-1"
+  >
+    <img
+      alt="parakeet"
+      class="makeStyles-image-2"
+      src="test-file-stub"
+    />
+  </div>
+</div>
+`;

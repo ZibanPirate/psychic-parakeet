@@ -1,7 +1,8 @@
 {
   "name": "@parakeet/root",
   "workspaces": [
-    "api"
+    "api",
+    "web"
   ],
   "repository": {
     "type": "git",
@@ -14,11 +15,11 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "yarn && concurrently -k \"cd api && yarn build:watch\" \"cd api && yarn dev\"",
-    "lint:check": "concurrently -k \"cd api && yarn lint:check\"",
-    "lint:fix": "concurrently -k \"cd api && yarn lint:fix\"",
-    "test": "concurrently -k \"cd api && yarn test\"",
-    "test:cov": "concurrently -k \"cd api && yarn test:cov\"",
+    "dev": "yarn && concurrently \"cd api && yarn build:watch\" \"cd api && yarn dev\" \"cd web && yarn dev\"",
+    "lint:check": "concurrently \"cd api && yarn lint:check\" \"cd web && yarn lint:check\"",
+    "lint:fix": "concurrently \"cd api && yarn lint:fix\" \"cd web && yarn lint:fix\"",
+    "test": "concurrently \"cd api && yarn test\" \"cd web && yarn test\"",
+    "test:cov": "concurrently \"cd api && yarn test:cov\" \"cd web && yarn test:cov\"",
     "postinstall": "(husky install && husky set .husky/pre-commit \"cd api && yarn lint-staged\") || exit 0",
     "db:up":"cd api && yarn db:up && cd ..",
     "db:down":"cd api && yarn db:down && cd .."
