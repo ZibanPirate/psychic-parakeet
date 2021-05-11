@@ -13,14 +13,14 @@ exports[`Landing Page Render Landing page 1`] = `
       >
         <span
           aria-disabled="false"
-          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiSwitch-switchBase MuiSwitch-colorSecondary PrivateSwitchBase-checked-4 Mui-checked"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-10 MuiSwitch-switchBase MuiSwitch-colorSecondary PrivateSwitchBase-checked-11 Mui-checked"
         >
           <span
             class="MuiIconButton-label"
           >
             <input
               checked=""
-              class="PrivateSwitchBase-input-6 MuiSwitch-input"
+              class="PrivateSwitchBase-input-13 MuiSwitch-input"
               data-testid="dark-mode-switch"
               name="darkMode"
               type="checkbox"
@@ -39,7 +39,7 @@ exports[`Landing Page Render Landing page 1`] = `
         />
       </span>
       <div
-        class="makeStyles-darkModeText-2"
+        class="makeStyles-darkModeText-9"
       >
         🌙
       </div>
@@ -48,12 +48,74 @@ exports[`Landing Page Render Landing page 1`] = `
   <div
     class="makeStyles-searchContainer-1"
   >
-    <div>
-      Search goes here
-    </div>
-    <div>
-      Found 
-      0
+    <form
+      class="MuiPaper-root makeStyles-movieSearchRoot-3 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiInputBase-root makeStyles-movieSearchInput-4"
+      >
+        <input
+          class="MuiInputBase-input"
+          data-testid="search-field"
+          placeholder="Search Movies"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    class="makeStyles-resultsContainer-5"
+  >
+    Nothing to show yet.
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root makeStyles-backdrop-8"
+      data-testid="loading-backdrop-closed"
+      style="opacity: 0; visibility: hidden;"
+    >
+      <div
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </div>
     </div>
   </div>
 </div>
@@ -72,14 +134,14 @@ exports[`Landing Page Render Landing page after switching darkMode on 1`] = `
       >
         <span
           aria-disabled="false"
-          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-9 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-36 MuiSwitch-switchBase MuiSwitch-colorSecondary"
         >
           <span
             class="MuiIconButton-label"
           >
             <input
               checked=""
-              class="PrivateSwitchBase-input-12 MuiSwitch-input"
+              class="PrivateSwitchBase-input-39 MuiSwitch-input"
               data-testid="dark-mode-switch"
               name="darkMode"
               type="checkbox"
@@ -98,21 +160,1080 @@ exports[`Landing Page Render Landing page after switching darkMode on 1`] = `
         />
       </span>
       <div
-        class="makeStyles-darkModeText-8"
+        class="makeStyles-darkModeText-35"
       >
         🌞
       </div>
     </div>
   </header>
   <div
-    class="makeStyles-searchContainer-7"
+    class="makeStyles-searchContainer-27"
   >
-    <div>
-      Search goes here
+    <form
+      class="MuiPaper-root makeStyles-movieSearchRoot-29 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiInputBase-root makeStyles-movieSearchInput-30"
+      >
+        <input
+          class="MuiInputBase-input"
+          data-testid="search-field"
+          placeholder="Search Movies"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    class="makeStyles-resultsContainer-31"
+  >
+    Nothing to show yet.
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root makeStyles-backdrop-34"
+      data-testid="loading-backdrop-closed"
+      style="opacity: 0; visibility: hidden;"
+    >
+      <div
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </div>
     </div>
-    <div>
-      Found 
-      0
+  </div>
+</div>
+`;
+
+exports[`Landing Page Render Landing page after typing 'women' in search field then API call fails 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-62 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              class="PrivateSwitchBase-input-65 MuiSwitch-input"
+              data-testid="dark-mode-switch"
+              name="darkMode"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <div
+        class="makeStyles-darkModeText-61"
+      >
+        🌞
+      </div>
+    </div>
+  </header>
+  <div
+    class="makeStyles-searchContainer-53"
+  >
+    <form
+      class="MuiPaper-root makeStyles-movieSearchRoot-55 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiInputBase-root makeStyles-movieSearchInput-56"
+      >
+        <input
+          class="MuiInputBase-input"
+          data-testid="search-field"
+          placeholder="Search Movies"
+          type="text"
+          value="women"
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    class="makeStyles-resultsContainer-57"
+  >
+    Nothing to show yet.
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root makeStyles-backdrop-60"
+      data-testid="loading-backdrop-open"
+      style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Landing Page Render Landing page after typing 'women' in search field then API call fails 2`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-62 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              class="PrivateSwitchBase-input-65 MuiSwitch-input"
+              data-testid="dark-mode-switch"
+              name="darkMode"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <div
+        class="makeStyles-darkModeText-61"
+      >
+        🌞
+      </div>
+    </div>
+  </header>
+  <div
+    class="makeStyles-searchContainer-53"
+  >
+    <form
+      class="MuiPaper-root makeStyles-movieSearchRoot-55 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiInputBase-root makeStyles-movieSearchInput-56"
+      >
+        <input
+          class="MuiInputBase-input"
+          data-testid="search-field"
+          placeholder="Search Movies"
+          type="text"
+          value="women"
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    class="makeStyles-resultsContainer-57"
+  >
+    Nothing to show yet.
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root makeStyles-backdrop-60"
+      data-testid="loading-backdrop-closed"
+      style="opacity: 0; webkit-transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomLeft"
+  >
+    <div
+      class="MuiPaper-root MuiSnackbarContent-root MuiPaper-elevation6"
+      direction="up"
+      role="alert"
+      style="opacity: 1; transform: scale(1, 1); transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiSnackbarContent-message"
+      >
+        Network error, please try again in a while.
+      </div>
+      <div
+        class="MuiSnackbarContent-action"
+      >
+        <button
+          aria-label="close"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+          data-testid="notification-close-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Landing Page Render Landing page after typing 'women' in search field then API call fails 3`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-62 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              class="PrivateSwitchBase-input-65 MuiSwitch-input"
+              data-testid="dark-mode-switch"
+              name="darkMode"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <div
+        class="makeStyles-darkModeText-61"
+      >
+        🌞
+      </div>
+    </div>
+  </header>
+  <div
+    class="makeStyles-searchContainer-53"
+  >
+    <form
+      class="MuiPaper-root makeStyles-movieSearchRoot-55 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiInputBase-root makeStyles-movieSearchInput-56"
+      >
+        <input
+          class="MuiInputBase-input"
+          data-testid="search-field"
+          placeholder="Search Movies"
+          type="text"
+          value="women"
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    class="makeStyles-resultsContainer-57"
+  >
+    Nothing to show yet.
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root makeStyles-backdrop-60"
+      data-testid="loading-backdrop-closed"
+      style="opacity: 0; webkit-transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiSnackbar-root MuiSnackbar-anchorOriginBottomLeft"
+  >
+    <div
+      class="MuiPaper-root MuiSnackbarContent-root MuiPaper-elevation6"
+      direction="up"
+      role="alert"
+      style="opacity: 0; transform: scale(0.75, 0.5625); transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 130ms cubic-bezier(0.4, 0, 0.2, 1) 65ms;"
+    >
+      <div
+        class="MuiSnackbarContent-message"
+      />
+      <div
+        class="MuiSnackbarContent-action"
+      >
+        <button
+          aria-label="close"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+          data-testid="notification-close-button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              />
+            </svg>
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Landing Page Render Landing page after typing 'women' in search field then clearing it 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-49 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              class="PrivateSwitchBase-input-52 MuiSwitch-input"
+              data-testid="dark-mode-switch"
+              name="darkMode"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <div
+        class="makeStyles-darkModeText-48"
+      >
+        🌞
+      </div>
+    </div>
+  </header>
+  <div
+    class="makeStyles-searchContainer-40"
+  >
+    <form
+      class="MuiPaper-root makeStyles-movieSearchRoot-42 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiInputBase-root makeStyles-movieSearchInput-43"
+      >
+        <input
+          class="MuiInputBase-input"
+          data-testid="search-field"
+          placeholder="Search Movies"
+          type="text"
+          value="women"
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    class="makeStyles-resultsContainer-44"
+  >
+    Nothing to show yet.
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root makeStyles-backdrop-47"
+      data-testid="loading-backdrop-open"
+      style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Landing Page Render Landing page after typing 'women' in search field then clearing it 2`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-49 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              class="PrivateSwitchBase-input-52 MuiSwitch-input"
+              data-testid="dark-mode-switch"
+              name="darkMode"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <div
+        class="makeStyles-darkModeText-48"
+      >
+        🌞
+      </div>
+    </div>
+  </header>
+  <div
+    class="makeStyles-searchContainer-40"
+  >
+    <form
+      class="MuiPaper-root makeStyles-movieSearchRoot-42 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiInputBase-root makeStyles-movieSearchInput-43"
+      >
+        <input
+          class="MuiInputBase-input"
+          data-testid="search-field"
+          placeholder="Search Movies"
+          type="text"
+          value="women"
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    class="makeStyles-resultsContainer-44"
+  >
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-resultsCard-45 MuiPaper-outlined MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          Title 1
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+        >
+          plot-1
+        </p>
+      </div>
+      <div
+        class="MuiCardActions-root MuiCardActions-spacing"
+      >
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+          href="https://www.google.com/search?q=Title 1"
+          tabindex="0"
+          target="_blank"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Learn More
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-resultsCard-45 MuiPaper-outlined MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          Title 2
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+        >
+          plot-2
+        </p>
+      </div>
+      <div
+        class="MuiCardActions-root MuiCardActions-spacing"
+      >
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+          href="https://www.google.com/search?q=Title 2"
+          tabindex="0"
+          target="_blank"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Learn More
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-resultsCard-45 MuiPaper-outlined MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          Title 3
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+        >
+          plot-3
+        </p>
+      </div>
+      <div
+        class="MuiCardActions-root MuiCardActions-spacing"
+      >
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+          href="https://www.google.com/search?q=Title 3"
+          tabindex="0"
+          target="_blank"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Learn More
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-resultsCard-45 MuiPaper-outlined MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          Title 4
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+        >
+          plot-4
+        </p>
+      </div>
+      <div
+        class="MuiCardActions-root MuiCardActions-spacing"
+      >
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+          href="https://www.google.com/search?q=Title 4"
+          tabindex="0"
+          target="_blank"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Learn More
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-resultsCard-45 MuiPaper-outlined MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h5"
+        >
+          Title 5
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+        >
+          plot-5
+        </p>
+      </div>
+      <div
+        class="MuiCardActions-root MuiCardActions-spacing"
+      >
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+          href="https://www.google.com/search?q=Title 5"
+          tabindex="0"
+          target="_blank"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Learn More
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root makeStyles-backdrop-47"
+      data-testid="loading-backdrop-closed"
+      style="opacity: 0; webkit-transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+    >
+      <div
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Landing Page Render Landing page after typing 'women' in search field then clearing it 3`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-49 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              class="PrivateSwitchBase-input-52 MuiSwitch-input"
+              data-testid="dark-mode-switch"
+              name="darkMode"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <div
+        class="makeStyles-darkModeText-48"
+      >
+        🌞
+      </div>
+    </div>
+  </header>
+  <div
+    class="makeStyles-searchContainer-40"
+  >
+    <form
+      class="MuiPaper-root makeStyles-movieSearchRoot-42 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiInputBase-root makeStyles-movieSearchInput-43"
+      >
+        <input
+          class="MuiInputBase-input"
+          data-testid="search-field"
+          placeholder="Search Movies"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        class="MuiButtonBase-root MuiIconButton-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </form>
+  </div>
+  <div
+    class="makeStyles-resultsContainer-44"
+  >
+    Nothing to show yet.
+    <div
+      aria-hidden="true"
+      class="MuiBackdrop-root makeStyles-backdrop-47"
+      data-testid="loading-backdrop-closed"
+      style="opacity: 0; webkit-transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; visibility: hidden;"
+    >
+      <div
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
+      >
+        <svg
+          class="MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
+      </div>
     </div>
   </div>
 </div>

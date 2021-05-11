@@ -1,12 +1,18 @@
 import { Action } from "src/redux";
-
+import { MovieEntity } from "@parakeet/api/src/app/database/entity/movie";
 export interface LandingPageState {
-  movies: string[] | null;
+  searchQuery: string;
+  movies: MovieEntity[];
+  isFetching: boolean;
+  errorMessage: string;
 }
 
 export const landingPage = (
   state: LandingPageState = {
+    searchQuery: "",
     movies: [],
+    isFetching: false,
+    errorMessage: "",
   },
   action: Action<LandingPageState>,
 ) => {
