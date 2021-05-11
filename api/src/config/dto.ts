@@ -24,4 +24,4 @@ export class ENV {
 export type DotEnv = Record<keyof ENV, string>;
 
 // no stage environment cuz it's just a coding-challenge ;)
-type Environment = "development" | "production" | "test";
+export type Environment = "development" | "production" | "test";
