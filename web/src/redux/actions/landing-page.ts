@@ -7,7 +7,7 @@ import { config } from "src/config";
 const apiEndpoint = config.api.url;
 
 /**
- * Fetches the repository of the provided user
+ * Fetches the movies
  */
 export const searchMoviesThunk =
   (): ThunkResult<LandingPageState> => async (dispatch, getState) => {
