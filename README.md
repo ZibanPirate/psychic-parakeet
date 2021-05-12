@@ -36,6 +36,15 @@ then on the browser, go to http://localhost:8080 for frontend.
 
 for api server, go to http://localhost:7070/docs which provides a swagger UI.
 
+To Pull the data manually from OMDBAPI.com, run:
+
+```sh
+curl --location --request POST 'http://localhost:7070/OmdbApi/PullDataManually' \
+--header 'Authorization: Bearer some-custom-token'
+```
+
+or call it from the Swagger UI on the browser
+
 ## Linting and Code Quality
 
 for linting JS/TS files, i'm using [Eslint](https://eslint.org/) configured with [Typescript](https://www.typescriptlang.org/), for the rest of the files i'm using [prettier](https://prettier.io/)
