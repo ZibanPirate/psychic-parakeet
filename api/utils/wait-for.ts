@@ -1,3 +1,8 @@
+import "reflect-metadata";
+
+import Container from "typedi";
+import { LoggerService } from "../src/logger/service";
+
 interface Config {
   deps: Array<{
     name: string;
@@ -6,13 +11,19 @@ interface Config {
   interval?: number;
 }
 
+const loggerService = Container.get(LoggerService);
+
 export const waitFor = async ({ deps, interval = 1000 }: Config) => {
   do {
     try {
       const areReady = await Promise.all(deps.map((dep) => dep.condition()));
-      console.log(
-        deps.map(({ name }, i) => `${name} is ${areReady[i] ? "UP" : "DOWN"}`),
-      );
+      loggerService.info({
+        message: JSON.stringify(
+          deps.map(
+            ({ name }, i) => `${name} is ${areReady[i] ? "UP" : "DOWN"}`,
+          ),
+        ),
+      });
       if (!areReady.includes(false)) {
         process.exit(0);
       }

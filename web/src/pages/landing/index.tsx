@@ -74,7 +74,6 @@ export const LandingPage: FC = () => {
 
   const { current: fetchMovies } = useRef(
     debounce(() => {
-      console.log(Math.random());
       dispatch(searchMoviesThunk());
     }, 500),
   );

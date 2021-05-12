@@ -7,8 +7,6 @@ const deps = [
     name: "Postgres",
     condition: async () => {
       try {
-        console.log(process.env.DB_URI);
-
         const client = new Client(process.env.DB_URI);
         await client.connect();
         await client.end();
