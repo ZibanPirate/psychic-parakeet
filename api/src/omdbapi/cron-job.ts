@@ -1,11 +1,13 @@
 import Cron from "cron";
 import { CronJob } from "../app/cron-jobs/types";
 import { InjectRepository } from "typeorm-typedi-extensions";
+import { LoggerService } from "../logger/service";
 import { MovieEntity } from "../app/database/entity/movie";
 import { MovieRepository } from "../movie/repository";
 import { OmdbApiService } from "./service";
 import { SearchService } from "../search/service";
 import { Service } from "typedi";
+import { toString } from "cronstrue";
 
 @Service()
 export class PullOmdbDataCronJob implements CronJob {
@@ -13,6 +15,7 @@ export class PullOmdbDataCronJob implements CronJob {
     private omdbApiService: OmdbApiService,
     @InjectRepository(MovieEntity) private movieRepository: MovieRepository,
     private searchService: SearchService,
+    private loggerService: LoggerService,
   ) {}
 
   public time = "00 00 00 * * *";
@@ -25,7 +28,9 @@ export class PullOmdbDataCronJob implements CronJob {
     const recordsPerPage = 10;
     const fromYear = PullOmdbDataCronJob.fromYear;
     const toYear = 2001;
-    console.time("PullOmdbDataCronJob");
+    this.loggerService.info({
+      message: `RUNNING CRON [${toString(this.time)}] : ${this.name}`,
+    });
     for (let year = fromYear; year <= toYear; year++) {
       let count = 0;
       let page = 0;
@@ -71,13 +76,14 @@ export class PullOmdbDataCronJob implements CronJob {
             plot,
           })),
         );
-
-        console.log({ progress, query: "space", page, type: "movie", year });
       } while (page * recordsPerPage < count);
       totalCount += count;
     }
-    console.timeEnd("PullOmdbDataCronJob");
-    console.log(`Done fetching and updating ${totalCount} records`);
+    this.loggerService.info({
+      message: `FINISHED CRON [${toString(this.time)}] : ${
+        this.name
+      } => Done fetching and updating ${totalCount} records`,
+    });
   };
 
   public start = () => {

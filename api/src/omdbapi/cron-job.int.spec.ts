@@ -3,6 +3,7 @@ import { envMock, generateOmdbRecordBatchMock } from "../../test/mocks";
 import Axios from "axios";
 import { ConfigService } from "../config/service";
 import Cron from "cron";
+import { LoggerService } from "../logger/service";
 import { MovieRepository } from "../movie/repository";
 import { PullOmdbDataCronJob } from "./cron-job";
 import { SearchService } from "../search/service";
@@ -27,6 +28,7 @@ describe("PullOmdbDataCronJob", () => {
   const configService = typeDIContainer.get(ConfigService);
   const omdbApiService = new OmdbApiService(configService);
   const searchService = new SearchService(configService);
+  const loggerService = new LoggerService();
 
   const omdbRecordBatchMock = generateOmdbRecordBatchMock(0, 10);
   const movieRepository = mock<MovieRepository>();
@@ -36,6 +38,7 @@ describe("PullOmdbDataCronJob", () => {
       omdbApiService,
       (movieRepository as unknown) as MovieRepository,
       searchService,
+      loggerService,
     );
 
     expect(pullOmdbDataCronJob.start).not.toThrow();
@@ -54,6 +57,7 @@ describe("PullOmdbDataCronJob", () => {
       omdbApiService,
       (movieRepository as unknown) as MovieRepository,
       searchService,
+      loggerService,
     );
     await pullOmdbDataCronJob.run();
 

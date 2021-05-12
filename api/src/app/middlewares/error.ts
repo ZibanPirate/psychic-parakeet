@@ -4,11 +4,14 @@ import {
 } from "routing-controllers";
 import { ErrorRequestHandler } from "express";
 import { GeneralResponse } from "../types";
+import { LoggerService } from "../../logger/service";
 import { Service } from "typedi";
 
 @Service()
 @Middleware({ type: "after" })
 export class ErrorMiddleware implements ExpressErrorMiddlewareInterface {
+  constructor(private loggerService: LoggerService) {}
+
   error: ErrorRequestHandler<never, GeneralResponse, unknown> = (
     err,
     req,
@@ -16,7 +19,7 @@ export class ErrorMiddleware implements ExpressErrorMiddlewareInterface {
     next,
   ) => {
     // Logs error
-    console.log({
+    this.loggerService.error({
       message: "Internal Server Error",
       error: err?.message,
     });
