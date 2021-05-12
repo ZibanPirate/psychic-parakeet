@@ -60,7 +60,8 @@
     "swagger-ui-express": "^4.1.6",
     "typedi": "^0.10.0",
     "typeorm": "^0.2.32",
-    "typeorm-typedi-extensions": "^0.4.1"
+    "typeorm-typedi-extensions": "^0.4.1",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",
